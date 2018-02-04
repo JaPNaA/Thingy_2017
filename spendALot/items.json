@@ -1,0 +1,276 @@
+[
+    {
+        "name": "Paperclip",
+        "cost": 0.03,
+        "cooldown": 1,
+        "tech": 2,
+        "caption": "Gotta keep you're money organized"
+    },
+    {
+        "name": "Plate",
+        "cost": 4.99,
+        "tech": 5,
+        "caption":
+            "Need things to eat off of so you don't starve while burning money",
+        "cooldown": 1
+    },
+    {
+        "name": "Clothing",
+        "cost": 4.99,
+        "tech": 3,
+        "caption": "Clothing looks better than money on your body",
+        "cooldown": 200
+    },
+    {
+        "name": "Overpriced clothing",
+        "cost": 499.99,
+        "tech": 50,
+        "caption": "These didn't come from Africa",
+        "cooldown": 500
+    },
+    {
+        "name": "Hairbrush",
+        "cost": 24.99,
+        "tech": 20,
+        "caption":
+            "Your money has been left alone for such a long time, the dust has crystalized into some form of hair",
+        "cooldown": 250
+    },
+    {
+        "name": "Toothbrush",
+        "cost": 29.99,
+        "tech": 15,
+        "caption": "No one is going to want your money if you have bad breath",
+        "cooldown": 250
+    },
+    {
+        "name": "Low-end Laptop",
+        "cost": 229.99,
+        "cooldown": 1000,
+        "tech": 1050,
+        "caption": "Ewwww"
+    },
+    {
+        "name": "High-end Laptop",
+        "cost": 999.99,
+        "cooldown": 2000,
+        "tech": 1250,
+        "caption": "Good laptops are gooder than bad ones."
+    },
+    {
+        "name": "Low-end Computer",
+        "cost": 399.99,
+        "cooldown": 1000,
+        "tech": 1070,
+        "caption":
+            "<code>01010111 01101000 01100001 01110100 00100000 01100100 01101001 01100100 00100000 01111001 01101111 01110101 00100000 01100101 01111000 01110000 01100101 01100011 01110100 00111111</code>"
+    },
+    {
+        "name": "High-end Computer",
+        "cost": 1999.99,
+        "cooldown": 1500,
+        "tech": 1090,
+        "caption": "G8 4 Gaming8 M8"
+    },
+    {
+        "name": "Low-end TV",
+        "cost": 299.99,
+        "cooldown": 1100,
+        "tech": 1100,
+        "caption": "SD. That's ugly."
+    },
+    {
+        "name": "High-end TV",
+        "cost": 4999.99,
+        "cooldown": 2100,
+        "tech": 1600,
+        "caption": "Like 8190280498k display"
+    },
+    {
+        "name": "Used Car",
+        "cost": 7500,
+        "cooldown": 2000,
+        "tech": 950,
+        "caption": "Wonder what they left behind?"
+    },
+    {
+        "name": "New Car",
+        "cost": 24000,
+        "cooldown": 5000,
+        "tech": 850,
+        "caption": "idk any car brands. i liek compooters"
+    },
+    {
+        "name": "Old House",
+        "cost": 200000,
+        "cooldown": 1500,
+        "tech": 400,
+        "caption": "meh"
+    },
+    {
+        "name": "Modern House",
+        "cost": 600000,
+        "cooldown": 5000,
+        "tech": 1300,
+        "caption":
+            "The best on the market... But even better, the toilet automatically flushes"
+    },
+    {
+        "name": "Large House",
+        "cost": 750000,
+        "cooldown": 10000,
+        "tech": 650,
+        "caption": "What's the diffrence between this and a mansion?"
+    },
+    {
+        "name": "Mansion",
+        "cost": 1500000,
+        "cooldown": 50000,
+        "tech": 750,
+        "caption": "These toilets don't auto flush"
+    },
+    {
+        "name": "Research Lab",
+        "cost": 6000000,
+        "cooldown": 30000,
+        "tech": 10,
+        "max": 1000,
+        "id": "researchlab",
+        "caption": "Increase your tech while helping you lose money",
+        "boost": {
+            "tech": 1,
+            "money": -3000000
+        }
+    },
+    {
+        "name": "NASA",
+        "caption": "<b>N</b>ational J<b>a</b>P i<b>S</b> kewl d<b>A</b>y",
+        "max": 10,
+        "cooldown": 60000,
+        "tech": 700,
+        "boost": {
+            "tech": 100,
+            "money": 2e9
+        }
+    },
+    {
+        "name": "\"Family Crisis\"",
+        "cost": 0,
+        "tech": -1,
+        "max": 1,
+        "caption":
+            "Increased Difficulty:\nGrandma continuously wins the slot machines",
+        "boost": {
+            "money": 1e16
+        },
+        "confirm": "Are you sure? -- Family Crisis"
+    },
+    {
+        "name": "Earth",
+        "cost": 195000000000000000,
+        "tech": 10000,
+        "max": 8,
+        "cooldown": 300000,
+        "caption": "Erm. Well you have enough money to"
+    },
+    {
+        "name": "Moon",
+        "cost": 180000000000,
+        "tech": 52100,
+        "max": 69,
+        "cooldown": 60000,
+        "caption": "That's a lot of cheese you know."
+    },
+    {
+        "name": "The Sun",
+        "cost": 1.17e24,
+        "tech": 50000,
+        "max": 1,
+        "caption": "Don't stare directly at it"
+    },
+    {
+        "name": "A star",
+        "cost": 2.34e24,
+        "tech": 100000,
+        "cooldown": 100000,
+        "max": 2e9,
+        "caption": "Twinkle twinkle little star how much money do you cost?"
+    },
+    {
+        "name": "Money Shredder",
+        "cost": 12,
+        "tech": 1000,
+        "max": 1000,
+        "cooldown": 1000,
+        "caption": "Shreds your money. Because why not?",
+        "boost": {
+            "money": -1e9
+        }
+    },
+    {
+        "name": "Chunk Loader",
+        "cost": 0,
+        "tech": 265,
+        "max": 1,
+        "caption":
+            "You can finally go offline! This keeps your data and lets all the auto-money wasters continue to use you're money",
+        "boost": {
+            "offline": true
+        }
+    },
+    {
+        "name": "Robbers",
+        "cost": 1e6,
+        "tech": 1400,
+        "cooldown": 2000,
+        "caption":
+            "Invite some robbers to steal your money... yea... you're really desperate to lose money",
+        "boost": {
+            "money": 1e15
+        }
+    },
+    {
+        "name": "Student Dept",
+        "cost": 50000,
+        "tech": 30,
+        "caption": "Gotta get to class...",
+        "max": 1
+    },
+    {
+        "name": "Someone else's Studen Dept",
+        "cost": 50000,
+        "tech": 45,
+        "cooldown": 2000,
+        "caption": "Feeling generous?",
+        "max": 500
+    },
+    {
+        "name": "Donate all to Charity",
+        "cost": 1e33,
+        "tech": 1,
+        "caption": "CHARITIES IN 1997? LUL",
+        "max": 0
+    },
+    {
+        "name": "Be alive",
+        "cost": 5e6,
+        "tech": 0,
+        "caption": "but do you really want to be?",
+        "max": 1,
+        "boost": {
+            "tech": 1
+        }
+    },
+    {
+        "name": "Minister of Sciences",
+        "cost": 2e6,
+        "tech": 100,
+        "caption":
+            "Too lazy to press a button to build research labs? He'll happily press it for you for a low low price of 2 million dollars!",
+        "max": 1,
+        "boost": {
+            "buy": "researchlab",
+            "money": -1e5
+        }
+    }
+]

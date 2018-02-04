@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Canvas Draw </title>
+    <style>
+        * {
+            user-select: none;
+        }
+        
+        @keyframes outlineRainbow {
+            0% {
+                outline: solid 2px hsl(0, 100%, 50%);
+            }
+            12.5% {
+                outline: solid 2px hsl(45, 100%, 50%);
+            }
+            25% {
+                outline: solid 2px hsl(90, 100%, 50%);
+            }
+            37.5% {
+                outline: solid 2px hsl(135, 100%, 50%);
+            }
+            50% {
+                outline: solid 2px hsl(180, 100%, 50%);
+            }
+            62.5% {
+                outline: solid 2px hsl(225, 100%, 50%);
+            }
+            75% {
+                outline: solid 2px hsl(270, 100%, 50%);
+            }
+            87.5% {
+                outline: solid 2px hsl(315, 100%, 50%);
+            }
+            100% {
+                outline: solid 2px hsl(360, 100%, 50%);
+            }
+        }
+        
+        .toolbar>li {
+            display: inline-block;
+            transition: 0.15s;
+            padding: 4px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        
+        .toolbar>li:hover {
+            background-color: #ededed;
+        }
+        
+        div[do] {
+            display: inline;
+            margin: none;
+        }
+        
+        li[do][selected] {
+            background-color: black;
+            color: white;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        canvas {
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://rawgit.com/JaPNaA/kKJFDKJHhAIULFyOWYR-YQ-eyouHSDUIiuamsd/master/%24.js"></script>
+    <script>
+        (function() { //Set values
+            var vars = {
+                canvas: [$('<canvas>'), $('<canvas>')],
+                tools: $('<div>'),
+                toolsSettings: $('<div>'),
+                key: [],
+                mousedown: false,
+                jMouseUp: false,
+                drawSize: 2,
+                drawColor: "#000000",
+                method: {
+                    selected: "draw",
+                    draw: [true, true]
+                },
+                document: {
+                    title: document.title
+                }
+            }
+            vars.ctx = vars.canvas[0].getContext('2d');
+            vars.ctx1 = vars.canvas[1].getContext('2d');
+            window.vars = vars;
+            console.log(vars);
+        }());
+        (function() { //Finish element stuff
+            var c = vars.canvas,
+                x = vars.ctx,
+                x1 = vars.ctx1,
+                d = $('<div id="canvas_container"></div>');
+            c[0].id = "cvs";
+            c[0].style = "position:absolute;";
+            c[0].setAttribute('height', "720px");
+            c[0].setAttribute('width', "1280px");
+            c[1].id = "ui";
+            c[1].style = "position:absolute; animation:outlineRainbow 7s linear infinite normal; z-index:1; cursor:crosshair;";
+            c[1].setAttribute('height', "720px");
+            c[1].setAttribute('width', "1280px");
+            d.appendChild(c[0]);
+            d.appendChild(c[1]);
+            document.body.appendChild(d);
+            x.fillStyle = "white";
+            x.fillRect(0, 0, 1280, 720);
+            //* INSERT TOOLBAR + SETTINGS
+        }());
+
+        function draw(e) {
+            var c = vars.canvas,
+                x = vars.ctx,
+                x1 = vars.ctx1;
+            x.strokeStyle = vars.drawColor;
+            x.fillStyle = vars.drawColor;
+            x.lineWidth = vars.drawSize;
+            if (vars.method.selected == "draw") {
+                if (!vars.jMouseUp) {
+                    if (vars.method.draw[0]) {
+                        x.lineTo(e.pageX - 8, e.pageY - 8);
+                        x.stroke();
+                    }
+                    if (vars.method.draw[1]) {
+                        x.beginPath();
+                        x.arc(e.pageX - 8, e.pageY - 8, vars.drawSize / 2, 0, 2 * Math.PI);
+                        x.fill();
+                    }
+                    if (vars.method.draw[0]) x.beginPath();
+                } else {
+                    vars.jMouseUp = false;
+                }
+                if (vars.method.draw[0]) x.moveTo(e.pageX - 8, e.pageY - 8);
+            }
+            //DrawFunctions, e provides mouse details
+        }
+        (function() { //Event listeners
+            var c = vars.canvas,
+                x = vars.ctx,
+                x1 = vars.ctx1;
+            //KeyEngine
+            window.addEventListener('keydown', function(e) {
+                vars.key[e.keyCode] = true;
+                if (e.keyCode == 13 && confirm('Clear canvas?')) {
+                    x.clearRect(0, 0, 1280, 720);
+                }
+                if (e.keyCode == 83 && confirm('Save canvas?')) {
+                    var file_path = $('#cvs',"element").toDataURL();
+                    var a = document.createElement('A');
+                    a.href = file_path;
+                    a.download = "Canvas Draw Download.png";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+                if (e.keyCode == 32) {
+                    e.preventDefault();
+                }
+            }, false);
+            window.addEventListener('keyup', function(e) {
+                vars.key[e.keyCode] = false;
+            }, false);
+            c[1].addEventListener('mousedown', function(e) {
+                draw(e);
+                vars.mousedown = true;
+            }, false);
+            window.addEventListener('mouseup', function(e) {
+                vars.mousedown = false;
+                vars.jMouseUp = true;
+            }, false);
+            c[1].addEventListener('mousemove', function(e) {
+                if (vars.key[32] || vars.mousedown) {
+                    draw(e);
+                }
+            }, false);
+            document.addEventListener("mouseout", function(e) {
+                e = e ? e : window.event;
+                var from = e.relatedTarget || e.toElement;
+                if (!from || from.nodeName == "HTML") {
+                    document.title = "Don't forget to save!";
+                    setTimeout(function() {
+                        document.title = vars.document.title;
+                    }, 2e3);
+                }
+            }, false);
+        }());
+        (function() { //Setup tools (draw)
+            var a = [vars.tools, vars.toolsSettings],
+                toolSettings = ["<div do='color'><input type=color></div><div do=size><input type=number min=1 max=1500 value=2></div>", "<div do='color'><input type=color></div><div do=size><input type=number min=1 max=1500 value=2></div>"];
+            a[0].innerHTML = "Draw method: <ul class=toolbar><li do=0 selected>Hybird</li><li do=1>Lines</li><li do=2>Dots</li></ul> <ul class=toolbar><li do=3>Rectangle</ul>";
+            a[0].style = "position:relative; top:732px;";
+            a[1].innerHTML = toolSettings[0];
+            a[1].style = "position:relative; top:732px;";
+            document.body.appendChild(a[0]);
+            document.body.appendChild(a[1]);
+
+            function toolSettingsSet(e) {
+                var m = vars.method;
+                switch (e) {
+                    case 0:
+                        a[1].innerHTML = toolSettings[e];
+                        $("div[do=color]>input[type=color]").value = vars.drawColor;
+                        $("div[do=size]>input[type=number]").value = vars.drawSize;
+                        m.selected = "draw";
+                        break;
+                    case 1: //* Insert setting for a rectangle.
+                        a[1].innerHTML = toolSettings[e];
+                        $("div[do=color]>input[type=color]").value = vars.drawColor;
+                        break;
+                    default:
+                        alert('An error has occured. Please reload.');
+                        break;
+                }
+                eventListernersToolBar();
+            }
+
+            function eventListernersToolBar() {
+                $('ul.toolbar>li[do]').forEach(function(ob) {
+                    ob.addEventListener('click', function() {
+                        var a = this.getAttribute('do'),
+                            m = vars.method;
+                        $('ul.toolbar>li[do]').forEach(function(ob1) {
+                            ob1.removeAttribute('selected');
+                        });
+                        this.setAttribute('selected', "");
+                        if (a == 0) {
+                            m.draw = [1, 1];
+                            toolSettingsSet(0);
+                        }
+                        if (a == 1) {
+                            m.draw = [1, 0];
+                            toolSettingsSet(0);
+                        }
+                        if (a == 2) {
+                            m.draw = [0, 1];
+                            toolSettingsSet(0);
+                        }
+                        if (a == 3) {
+                            toolSettingsSet(1);
+                            alert("This doesn't work.... but okay...");
+                        }
+                    }, false);
+                });
+                $('[do=size]>input[type=number]').addEventListener('change', function() {
+                    if (this.value > 1500) {
+                        this.value = 1500;
+                    }
+                    if (this.value < 1) {
+                        this.value = 1;
+                    }
+                    vars.drawSize = this.value - 1 + 1;
+                }, false);
+                $("[do=color]>input[type=color]").addEventListener('change', function() {
+                    vars.drawColor = this.value;
+                }, false);
+            }
+            eventListernersToolBar();
+        }());
+    </script>
+</body>
+
+</html>

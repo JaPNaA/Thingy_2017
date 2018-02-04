@@ -1,0 +1,19 @@
+canvas{
+  position: fixed;
+  background-color: #000;
+}
+canvas.w{
+  width: 100%;
+}
+canvas.h{
+  height: 100%;
+}
+body{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-image: url(https://thumb9.shutterstock.com/display_pic_with_logo/3821945/362646188/stock-vector-squares-cell-sheet-pattern-background-abstract-grid-wallpaper-symbol-transparency-grid-lines-362646188.jpg);
+  /* this is a joke -- using a copyrighted/stock images*/
+  background-size: 128px;
+  overflow: hidden;
+}

@@ -1,0 +1,61 @@
+{
+    "asp": {
+        "width": 16,
+        "height": 9
+    },
+    "freq": {
+        "coin": {
+            "p": 60,
+            "o": 0,
+            "f": 0
+        },
+        "wall": {
+            "p": 80,
+            "o": 30,
+            "f": 180
+        },
+        "obstacle": {
+            "p": 45,
+            "o": 5,
+            "f": 60
+        },
+        "block": {
+            "p": 100,
+            "o": 15,
+            "f": 240
+        },
+        "seek": {
+            "p": 80,
+            "o": 15,
+            "f": 300
+        }
+    },
+    "tickSpeed": 20,
+    "boundary": {
+        "ceil": 0.02,
+        "floor": 0.98,
+        "left": 0,
+        "right": 0
+    },
+    "airResistance": 0.95,
+    "gravity": 0.0075,
+    "xl": 0.0005,
+    "spd": 0.0225,
+    "smoothening": 2.5,
+    "doubleWallChance": 0.3,
+    "wallOpeningSize": 0.4,
+    "minWallSize": 0.05,
+    "movingWallChance": 0.1,
+    "minBlockSize": 0.05,
+    "maxBlockSize": 0.2,
+    "fallingBlockSize": 0.05,
+    "seekXSpeed": 0.03,
+    "seekYSpeed": 0.0225,
+    "seekXl": 0.01,
+    "seekLimit": 0.025,
+    "deathMessage": ["gee gee", "Game over", "You deathed", "You died",
+        "Git gud.", "JaPNaA", "Collision detected", "lol", "lel",
+        "get rekt", "You thought this was easy?", "I challenge you to 10k",
+        "js: '0x'+random(0,16**6).round().toString(16).toUpperCase().len(8,'0')"
+    ]
+}

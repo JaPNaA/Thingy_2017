@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+    overflow: hidden;
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.gameInterface {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7em;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.35);
+    margin: 0 2px;
+}
+
+.gameInterface>div {
+    margin-bottom: 1em;
+}
+
+.gameInterface .title {
+    font-size: 1.5em;
+}
+
+.gameInterface .listInterface .item {
+    padding: 2px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 2px 0;
+    cursor: pointer;
+    will-change: background-color;
+    transition: 0.15s;
+    display: block;
+    position: relative;
+}
+.gameInterface .listInterface .item:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.gameInterface .listInterface .ico {
+    width: 0.7em;
+    height: 0.7em;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.gameInterface .listInterface .item > .no {
+    position: absolute;
+    right: 4px;
+    color: #FFF;
+    opacity: 0.15;
+    top: 0.15em;
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>eval vs not eval</title>
+    <style>
+    .card{
+        display: inline-block;
+        width: 144px;
+        margin: 0px 24px 0px 0px;
+    }
+    .card .title {
+        color: #009fff;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    code {
+        color: #333;
+    }
+    .card .data {
+        font-family: calibri;
+    }
+    .card .data::after {
+        content: "ms";
+    }
+    .card .description {
+        color: #555;
+    }
+    .mmm [mean] {
+        font-weight: bold;
+    }
+    .mmm [mean]::after {
+        content: " loops per second";
+        font-weight: 100;
+    }
+    .mmm [top]::after {
+        content: "ms slowest time to finish loop";
+        color: #222;
+    }=
+    .mmm [bot]::after {
+        content: "ms fastest time to finish loop";
+        color: #222;
+    }
+    .mmm>div {
+        margin: 8px 0px;
+    }
+    .mmm>.title {
+        font-size: 24px !important;
+    }
+    .mmm .title {
+        font-size: 18px;
+        color: #ff3b00;
+        font-weight: bold;
+    }
+    .rd {
+        margin-top: 16px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #e400ff;
+    }
+    h1{
+        margin-top: 0px;
+    }
+    </style>
+</head>
+<body>
+    <button onclick="start()">Start !NOTE: This may take some time and can only be ended with task manager</button>
+    <noscript>
+        Your browser is blocking JavaScript, or is not supported in this browser. Please enable JavaScript or upgrade your browser to preform this test
+    </noscript>
+    <script id=script>
+    window.onerror=function(e){
+        alert("An error occured! Your browser may not support this test!\n"+JSON.stringify(e));
+    }
+
+    function $(e){
+        var a=[].slice.call(document.querySelectorAll(e));
+        if(!a.length) return null;
+        if(a.length==1) return a[0];
+        if(a.length>1) return a;
+    }
+    var dt={
+        ev:[],
+        nev:[],
+        slev:[],
+        f:{
+            ev:0,
+            nev:0,
+            slev:0
+        }
+    };
+    window.dt=dt;
+    function start(){
+        document.body.innerHTML="";
+        (function(){
+            var ftime=new Date().getTime();
+            for(let i=0; i<1e4; i++){
+                var time=new Date().getTime();
+                var a,b,c,
+                    d=1,e=2,f=3,
+                    g=1e10, h=1e300, j="String",
+                    k=[1,2,3],
+                    l={
+                        This: "is",
+                        "an": [/Test/],
+                        Lel: undefined?null:""
+                    }
+                a=1;
+                b="Two";
+                c=[document.createElement("tree")];
+                try{
+                    z=document.getElementById("script");
+                } catch (e) {}
+                if(window.z){
+                    var z=document.getElementById("script");
+                }
+                for(o in k){
+                    k.push(k[o]);
+                }
+                window.io=a+b-c;
+                if((io&&c)||true){
+                    try{
+                        throw "error lol"
+                    } catch(e){
+                        Math.max(d,e,f,g,h,k[0],k[1],k[2],a,Math.floor(Math.random()*Math.round(Math.random())*1+Math.abs(-Math.random())^Math.floor(Math.random()*Math.round(Math.random())*1+Math.abs(-Math.random()))));
+                    }
+                }
+                document.body.innerHTML+=new Date().getTime()-time;
+                dt.nev.push(new Date().getTime()-time);
+            }
+            document.body.innerHTML+=("<b>"+ftime-new Date().getTime()+"ms -Not eval </b><br>");
+            dt.f.nev=new Date().getTime()-ftime;
+        }());
+        document.body.innerHTML="";
+        (function(){
+            var ftime=new Date().getTime();
+            eval(`
+            for(let i=0; i<1e4; i++){
+                var time=new Date().getTime();
+                var a,b,c,
+                    d=1,e=2,f=3,
+                    g=1e10, h=1e300, j="String",
+                    k=[1,2,3],
+                    l={
+                        This: "is",
+                        "an": [/Test/],
+                        Lel: undefined?null:""
+                    }
+                a=1;
+                b="Two";
+                c=[document.createElement("tree")];
+                try{
+                    z=document.getElementById("script");
+                } catch (e) {}
+                if(window.z){
+                    var z=document.getElementById("script");
+                }
+                for(o in k){
+                    k.push(k[o]);
+                }
+                window.io=a+b-c;
+                if((io&&c)||true){
+                    try{
+                        throw "error lol"
+                    } catch(e){
+                        Math.max(d,e,f,g,h,k[0],k[1],k[2],a,Math.floor(Math.random()*Math.round(Math.random())*1+Math.abs(-Math.random())^Math.floor(Math.random()*Math.round(Math.random())*1+Math.abs(-Math.random()))));
+                    }
+                }
+                document.body.innerHTML+=new Date().getTime()-time;
+                dt.ev.push(new Date().getTime()-time);
+            }
+            `);
+            document.body.innerHTML+=("<b>"+ftime-new Date().getTime()+"ms -eval </b><br>");
+            dt.f.ev=new Date().getTime()-ftime;
+        }());
+        document.body.innerHTML="";
+        (function(){
+            var ftime=new Date().getTime();
+            for(let i=0; i<1e4; i++){
+                eval(`
+                var time=new Date().getTime();
+                var a,b,c,
+                    d=1,e=2,f=3,
+                    g=1e10, h=1e300, j="String",
+                    k=[1,2,3],
+                    l={
+                        This: "is",
+                        "an": [/Test/],
+                        Lel: undefined?null:""
+                    }
+                a=1;
+                b="Two";
+                c=[document.createElement("tree")];
+                try{
+                    z=document.getElementById("script");
+                } catch (e) {}
+                if(window.z){
+                    var z=document.getElementById("script");
+                }
+                for(o in k){
+                    k.push(k[o]);
+                }
+                window.io=a+b-c;
+                if((io&&c)||true){
+                    try{
+                        throw "error lol"
+                    } catch(e){
+                        Math.max(d,e,f,g,h,k[0],k[1],k[2],a,Math.floor(Math.random()*Math.round(Math.random())*1+Math.abs(-Math.random())^Math.floor(Math.random()*Math.round(Math.random())*1+Math.abs(-Math.random()))));
+                    }
+                }
+                document.body.innerHTML+=new Date().getTime()-time;
+                dt.slev.push(new Date().getTime()-time);
+                `);
+            }
+            document.body.innerHTML+=("<b>"+ftime-new Date().getTime()+"ms -eval </b><br>");
+            dt.f.slev=new Date().getTime()-ftime;
+            document.body.innerHTML="";
+        }());
+        document.body.innerHTML="<code style='word-break: break-word;'>"+JSON.stringify(dt)+"</code>";
+        parseData(dt);
+    }
+    function parseData(dt){
+        var a=document.createElement("div");
+        a.innerHTML=`
+        <h1>Is eval really slower? (results may vary)</h1>
+        <div class=totals>
+            <div class=card id=nev>
+                <div class=title>Without eval</div>
+                <div class=data></div>
+                <div class=description>The normal, and recommended way.</div>
+            </div>
+            <div class=card id=ev>
+                <div class=title>Loop in eval</div>
+                <div class=data></div>
+                <div class=description>Placing a loop in eval: <code>eval(loop(){})</code></div>
+            </div>
+            <div class=card id=slev>
+                <div class=title>Eval in loop</div>
+                <div class=data></div>
+                <div class=description>Placing eval in a loop: <code>loop(){eval()}</code></div>
+            </div>
+        </div>
+        <div class=mmm>
+            <div class=title>More info</div>
+            <div id=nev>
+                <div class=title>Without eval</div>
+                <div mean></div>
+                <div top></div>
+                <div bot></div>
+            </div>
+            <div id=ev>
+                <div class=title>Loop in eval</div>
+                <div mean></div>
+                <div top></div>
+                <div bot></div>
+            </div>
+            <div id=slev>
+                <div class=title>Eval in loop</div>
+                <div mean></div>
+                <div top></div>
+                <div bot></div>
+            </div>
+        </div>
+        <div class=conclusion>
+            <span s=0></span> is the fastest, <br>
+            <span s=1></span> is slower, and <br>
+            <span s=2></span> is the slowest
+        </div>
+        <div class=rd>Raw data:</div>
+        `;
+        document.body.insertBefore(a,document.body.children[0]);
+
+        $(".totals>#nev>.data").innerHTML=dt.f.nev;
+        $(".totals>#ev>.data").innerHTML=dt.f.ev;
+        $(".totals>#slev>.data").innerHTML=dt.f.slev;
+
+        $(".mmm>#nev>[mean]").innerHTML=dt.nev.length/dt.f.nev;
+        $(".mmm>#nev>[top]").innerHTML=Math.max.apply(null, dt.nev);
+        $(".mmm>#nev>[bot]").innerHTML=Math.min.apply(null, dt.nev);
+
+        $(".mmm>#ev>[mean]").innerHTML=dt.ev.length/dt.f.ev;
+        $(".mmm>#ev>[top]").innerHTML=Math.max.apply(null, dt.ev);
+        $(".mmm>#ev>[bot]").innerHTML=Math.min.apply(null, dt.ev);
+
+        $(".mmm>#slev>[mean]").innerHTML=dt.slev.length/dt.f.slev;
+        $(".mmm>#slev>[top]").innerHTML=Math.max.apply(null, dt.slev);
+        $(".mmm>#slev>[bot]").innerHTML=Math.min.apply(null, dt.slev);
+
+        var l=[{n:"<b>Without eval</b>", v:dt.f.nev}, {n:"<b>Loop in eval</b>", v:dt.f.ev}, {n:"<b>Eval in loop</b>", v:dt.f.slev}].sort(function(a,b){return a.v-b.v});
+        $(".conclusion>[s='0']").innerHTML=l[0].n;
+        $(".conclusion>[s='1']").innerHTML=l[1].n;
+        $(".conclusion>[s='2']").innerHTML=l[2].n;
+    }
+    </script>
+</body>
+</html>

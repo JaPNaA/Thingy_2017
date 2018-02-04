@@ -1,0 +1,26 @@
+#can {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.startTouch{
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    opacity: 0.5;
+    border-radius: 32px;
+    background-color: #FFF;
+}
+body{
+    margin: 0;
+    overflow: hidden;
+}
+*{
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+}

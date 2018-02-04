@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: default;
+}
+code {
+    font-size: 7px;
+    line-height: 8px;
+}
+loading div {
+    display: inline-block;
+    z-index: 10;
+    background-color: #222;
+    color: #ddd;
+    padding: 32px 64px;
+}
+loading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 30%;
+}
+
+.text {
+    font-family: "Roboto", sans-serif;
+}
+.number {
+    font-family: "Lato", sans-serif;
+}
+.title {
+    font-family: "Open Sans", sans-serif;
+}
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noshow {
+    display: none;
+}
+.hidden {
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+}
+#showMoney.show {
+    display: block;
+    opacity: 1;
+    top: 0;
+    z-index: 2;
+}
+#showMoney {
+    opacity: 0;
+    position: fixed;
+    top: -12vh;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: rgba(197, 197, 197, 0.99);
+    transition: 0.25s;
+    z-index: 2;
+    will-change: top;
+    word-wrap: break-word;
+    font-size: 2.5em;
+    padding-top: 128px;
+    z-index: 0;
+}
+#showMoney::before {
+    content: "Money left: $";
+    font-weight: bold;
+}
+#head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background-color: rgba(197, 197, 197, 0.85);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2),
+        0px 4px 16px 2px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+}
+#head #moneyLeft {
+    font-size: 32px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 2;
+}
+#head #moneyLeft::before {
+    content: "$";
+}
+#head #moneySpent {
+    position: absolute;
+    top: 42px;
+    left: 8px;
+    z-index: 2;
+}
+#head #moneySpent::before {
+    content: "$";
+}
+#head #moneySpent::after {
+    content: " spent";
+}
+#head #progressBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 64px;
+    background-color: #3fff00;
+    z-index: 1;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 4px 0px 8px rgba(51, 255, 0, 0.4);
+    will-change: width;
+}
+#techCount {
+    z-index: 2;
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    left: -6px;
+    top: 42px;
+    opacity: 0.5;
+}
+#techCount::before {
+    content: "tech: ";
+}
+
+#itemC {
+    margin: 8px;
+    margin-top: 76px;
+    line-height: 0px;
+}
+.item {
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    line-height: normal;
+    width: 164px;
+    height: 242px;
+    background-color: #d6d6d6;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 8px;
+    display: inline-block;
+    overflow: hidden;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+    will-change: height, padding, margin, opacity;
+    transition: 0.15s;
+    opacity: 1;
+    cursor: pointer;
+    vertical-align: text-top;
+}
+.cooldownC {
+    position: absolute;
+}
+.cooldown {
+    height: 258px;
+    width: 164px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    transform: translate(-8px, -8px);
+    transition: 0.001s;
+}
+.item.hidden .cooldown {
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.item.disabled {
+    opacity: 0.6;
+}
+.item.sel.disabled {
+    transform: scale(1);
+}
+.item.sel {
+    transform: scale(1.02);
+}
+.item .cost::before {
+    content: "$";
+}
+
+.item .title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.item .tech {
+    opacity: 0.5;
+    font-size: 14px;
+}
+.item .tech::after {
+    content: " tech";
+}

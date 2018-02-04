@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SpendALot</title>
+    <link rel="stylesheet" href="css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="author" content="JaPNaA">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto" rel="stylesheet">
+    <script src="BigInteger.min.js"></script>
+    <script>
+        if(prompt("enter _THE_ code.") != btoa("¶¡×¢±§(uëkÊÚ ¹ë,Ùè²zÊ+qªl")){
+            document.body.innerHTML = "";
+            document.head.innerHTML = "";
+            history.back();
+        }
+    </script>
+</head>
+<body>
+    <ev class="noshow" id=ev>
+        <div id=showMoney class="number noSelect"></div>
+        <div id=head class="noSelect">
+            <div id=progressBar></div>
+            <div id=moneyLeft class="number"></div>
+            <div id=moneySpent class="number"></div>
+            <div id=techCount class="number"></div>
+        </div>
+        <div id=itemC></div>
+    </ev>
+    <loading id=loading>
+        <div>Loading... <br> Please wait. <br> Taking a while? An error may have occured </div>
+    </loading>
+    <script src="js.js"></script>
+</body>
+</html>

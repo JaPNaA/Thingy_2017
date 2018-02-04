@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'VT323';
+    src: url('font/VT323.ttf') format('truetype');
+}
+
+ev {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    will-change: cursor;
+}
+canvas {
+    top: 0;
+    left: 0;
+    will-change: width, height, top, left;
+    position: fixed;
+    image-rendering: optimizeSpeed;
+}
+canvas.w {
+    width: 100vw;
+}
+canvas.h {
+    height: 100vh;
+}
+.nomouse{
+    cursor: none;
+}

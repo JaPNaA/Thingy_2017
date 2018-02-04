@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#test {
+  color: gray;
+}
+body{
+font-family:monospace;
+}
+textarea{
+width:100%;
+font-family:Consolas,Courier,monospace;
+height:80px;
+}

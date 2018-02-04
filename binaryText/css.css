@@ -1,0 +1,131 @@
+textarea#in {
+    width: 100%;
+    height: 30vh;
+    top: 0;
+    left: 1px;
+    outline: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #000;
+    position: fixed;
+    resize: none;
+    font-size: 1.5em;
+    padding: 8px;
+    background-color: #fff;
+    z-index: 1;
+    overflow-y: scroll;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: 0.15s;
+}
+div#out {
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    padding: 16px;
+    padding-top: 32px;
+    font-size: 1.5em;
+    z-index: 0;
+    word-break: break-word;
+    padding-bottom: 64px;
+    white-space: pre-wrap;
+    transition: 0.15s;
+}
+.grey {
+    opacity: 0.5;
+}
+.bin {
+    font-family: monospace;
+    transition: 0.15s;
+}
+ev {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.15s;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+}
+#settings {
+    width: 2em;
+    height: 2em;
+    background: #000;
+    color: #eee;
+    line-height: 1.5em;
+    text-align: center;
+    padding: 2px;
+    z-index: 1;
+    bottom: 16px;
+    right: 16px;
+    position: fixed;
+    font-size: 1.5em;
+    border-radius: 2em;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.15s;
+    background-image: url(http://www.clker.com/cliparts/V/u/o/j/G/b/white-cog-hi.png);
+    background-repeat: no-repeat;
+    background-size: 0.9em;
+    background-position: 0.65em 0.65em;
+    opacity: 0.75;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+}
+#settings:hover {
+    opacity: 0.95;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    95% {
+        transform: scale(1.01);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.prompta {
+    font-size: 1.5em;
+    position: fixed;
+    background-color: #000;
+    color: #eee;
+    border-radius: 4px;
+    padding: 16px;
+    user-select: none;
+    cursor: default;
+    transition: 0.15s;
+    box-shadow: rgba(0, 0, 0, 0.4) 4px 6px 18px 0px;
+    opacity: 0.95;
+}
+.lprompta {
+    animation: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 4px 8px 20px 0px;
+}
+.aprompta {
+    animation: pop 0.4s forwards 1 ease;
+}
+.prompta div.check {
+    transition: 0.15s;
+    cursor: pointer;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.prompta h2 {
+    padding: 8px;
+    margin-bottom: 0.25em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.prompta div:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

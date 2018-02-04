@@ -1,0 +1,12 @@
+textarea#in, ev{
+    background-color: #000;
+    color: #EEE;
+}
+textarea#in {
+    border-bottom: 1px solid #FFF;
+    box-shadow: none;
+}
+
+.prompta, #settings{
+    background-color: #343434;
+}

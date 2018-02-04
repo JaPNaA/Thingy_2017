@@ -1,0 +1,87 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+td{
+    width: 26px;
+    height: 26px;
+    background: white;
+    text-align: center;
+    font-family: courier;
+    font-weight: bold;
+    background-color: lightgrey;
+    color: transparent;
+    cursor: default;
+    font-size: 20px;
+}
+div{
+    display: inline;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    z-index: 0;
+}
+div>div{
+    position: relative;
+    width: 512px;
+    font-size: 24px;
+}
+td:not(.show){
+    cursor: pointer;
+}
+td::after{
+    content: attr(v);
+}
+.show{
+    background-color: white;
+}
+[v="0"].show{
+    color: transparent;
+}
+[v="1"].show{
+    color: blue;
+}
+[v="2"].show{
+    color: green;
+}
+[v="3"].show{
+    color: red;
+}
+[v="4"].show{
+    color: darkblue;
+}
+[v="5"].show{
+    color: darkred;
+}
+[v="6"].show{
+    color: #005c62
+}
+[v="7"].show{
+    color: black;
+}
+[v="8"].show{
+    color: grey;
+}
+[m="1"].show{
+    color: transparent;
+    background: red;
+}
+[f="1"]:not(.show){
+    background: radial-gradient(aqua,blue);
+}
+table{
+    background: grey;
+    margin: 8px;
+    z-index: 1;
+    position: absolute;
+}
+dt{
+    display: block;
+}
+*{
+    user-select: none;
+    transition: 0.1s;
+}
+div>div>div{
+    font-weight: bold;
+}

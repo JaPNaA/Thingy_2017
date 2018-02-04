@@ -1,0 +1,10 @@
+note{
+    display: block;
+    opacity: 0.6;
+}
+note::before{
+    content: "*"
+}
+.red{
+    color: red;
+}

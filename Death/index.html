@@ -1,0 +1,22 @@
+<!doctype HTML>
+<html> <head> 
+    <title>Death.</title>
+</head>
+    <body style="background-color:#222">
+        <script>
+			var i = 0, a;
+			function t(){
+				document.body.style.backgroundColor = ["#F00", "#000", "#0F0", "#000", "#00F", "#000"][i++ % 6];
+				a.style.left = (i * 32) % innerWidth / 2 + innerWidth / 4 + "px";
+				a.style.top = (i * 32) % innerHeight / 2 + innerHeight / 4 + "px";
+				requestAnimationFrame(t);
+			}
+            function start(){
+				document.body.innerHTML = "<div class='a' style='width:32px; height:32px; background:white; position:absolute; border: 1px solid #000'></div>";
+				a = document.getElementsByClassName('a')[0];
+				requestAnimationFrame(t);
+			}
+        </script><span id=button>
+        <button onclick="start();">Click to start... There is no end.</button> <br> <b style="font-size:30px; color:#999;"> Warning: if you have epilepsy, dislike or are sensitive to flashing lights, DO <b>NOT</b> CLICK. You have been warned.</b></span>
+    </body>
+</html>
