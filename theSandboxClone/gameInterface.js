@@ -1,4 +1,5 @@
 function invert(e) {
+    if(!e) return "#FFFFFF";
     var a = parseInt(e.slice(1), 16);
     if (!a) return "#FFFFFF";
     return "#" + (0xFFFFFF - a).toString(16).padStart(6, 0);
@@ -22,7 +23,7 @@ class ListInterface {
             {
                 let b = document.createElement("div");
                 b.classList.add("ico");
-                b.style.backgroundColor = i.color;
+                b.style.backgroundColor = i.color || "#000000";
                 b.style.border = invert(i.color) + " 1px solid";
 
                 a.appendChild(b);

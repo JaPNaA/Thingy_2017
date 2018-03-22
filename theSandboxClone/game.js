@@ -10,7 +10,7 @@ export default class Game { // export game
         this.INDEX = [{
                 name: "nothing",
                 description: "just nothing",
-                color: "rgba(0, 0, 0, 0)"
+                color: null
             },
             {
                 name: "Block",
@@ -40,7 +40,13 @@ export default class Game { // export game
         ];
 
         // setup brushUI for user interface
-        this.brushUI = [];
+        this.brushUI = [
+            {
+                name: "showSize",
+                width: 64,
+                height: 48   
+            }
+        ];
 
         // setup timeUI for user interface
         this.timeUI = [];
@@ -105,7 +111,7 @@ export default class Game { // export game
         this.events = { // save to removeEventListeners
             mousedown: function (e) {
                 // make sure its canvas being clicked
-                if(!e.path.includes(that.canvas.canvas)) return;
+                if (!e.path.includes(that.canvas.canvas)) return;
 
                 var x = Math.floor(e.layerX / that.scale), // get x coord
                     y = Math.floor(e.layerY / that.scale); // get y coord * width
@@ -210,7 +216,7 @@ export default class Game { // export game
             for (let x = 0; x < width; x++) {
 
                 let it = this.INDEX[this.MAP[py + x]]; // get index item
-                if (!it) continue; // if non-existant move on
+                if (!it || !it.color) continue; // if non-existant move on
                 this.canvas.set(x, y,
                     it.color
                 ); // set pixel
