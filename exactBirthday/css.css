@@ -1,0 +1,25 @@
+input {
+    width: 100%;
+}
+#c {
+    display: flex;
+}
+#c > div {
+    margin-right: 16px;
+}
+
+#mc {
+    font-size: 10vh;
+}
+#mc.w {
+    font-size: 10vw;
+}
+#m.w {
+    font-size: 25vw;
+}
+
+#m {
+    font-size: 25vh;
+    word-wrap: break-word;
+    font-family: monospace;
+}
