@@ -1,0 +1,8 @@
+body {
+    background-color: #1e1a50;
+    color: #ececec;
+}
+
+#settings::before {
+    color: #004ce6;
+}

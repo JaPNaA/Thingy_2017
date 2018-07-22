@@ -2,25 +2,49 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Exact birthday</title>
+    <title> Exact Birthday </title>
     <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" data-href="dark.css" id="darkCSS">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
 </head>
 <body>
-    <div id=c>
-        <div>
-            Date of birth:<br>
-            <input type="date" id=bdi>
-        </div>
-        <div>
-            Time of birth (optional):<br>
-            <input type="time" id=bti>
+    <div id="new">
+        <h1 class="title"> Exact Birthday </h1>
+        <div class="box">
+            <h2 class="heading"> Enter your birthday </h2>
+            <div id="inputcontainer">
+                <input id="yearInp" type="number" placeholder="Year">
+                <input id="monthInp" type="text" placeholder="Month">
+                <input id="dayInp" type="number" placeholder="Day"> 
+            </div>
+            <button id="submit"> Submit </button>
+            <div class="note">
+                *Note: since this is your exact birthday, this also takes in account leap years, 
+                days, and seconds. (aka it's not very accurate (but it is precise.))
+            </div>
         </div>
     </div>
-    <div id=mc>
-        You are exactly
-        <div id=m></div>
-        years old.
+    <div id="main">
+        <div class="container">
+            <div class="wrap"> You are exactly </div> 
+            <div id="exactAge">~</div>
+            <div class="wrap"> years old! </div>
+        </div>
+    </div>
+    <div id="settings">
+        <div>
+            <button id="change"> Change Birthday </button>
+        </div>
+        <div>
+            <input type="time" id="time"> <br> Time of birth
+        </div>
+        <div>
+            <input type="checkbox" id="dark"> Dark mode
+        </div>
+        <div>
+            <input type="checkbox" id="big"> Very big
+        </div>
     </div>
     <script src="js.js"></script>
 </body>

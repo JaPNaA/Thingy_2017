@@ -1,25 +1,240 @@
-input {
+body {
+    background-color: var(--background);
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+:root {
+    --background: #E4B4FF;
+    --theme: rgb(108, 255, 79);
+}
+#new {
+    background-color: var(--background);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
     width: 100%;
-}
-#c {
-    display: flex;
-}
-#c > div {
-    margin-right: 16px;
+    height: 100%;
 }
 
-#mc {
-    font-size: 10vh;
-}
-#mc.w {
-    font-size: 10vw;
-}
-#m.w {
-    font-size: 25vw;
+#new .title {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: calc((4vw + 6vh) / 2);
+
+    position: absolute;
+    top: 12%;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
 }
 
-#m {
-    font-size: 25vh;
-    word-wrap: break-word;
-    font-family: monospace;
+#new .box {
+    background-color: #ffffff;
+    box-shadow: #00000041 2px 4px 32px;
+
+    position: absolute;
+    top: 30%;
+    left: 20%;
+
+    width: 60%;
+    min-width: 524px;
+    height: 50%;
+
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+#new .heading {
+    text-align: center;
+    font-size: calc((2.666vw + 4vh) / 2);
+    font-family: 'Open Sans', sans-serif;
+    
+    margin: 5%;
+}
+
+#new .note {
+    --margin: calc((50vh + 50vw) * 0.025);
+
+    font-size: calc((1vw + 1.5vh) / 2);
+    font-family: 'Open Sans', sans-serif;
+
+    position: absolute;
+    
+    left: var(--margin);
+    bottom: var(--margin);
+
+    width: 50%;
+}
+
+#new #inputcontainer {
+    text-align: center;
+
+    display: block;
+    position: absolute;
+    
+    left: 0;
+    top: 50%;
+
+    width: 100%;
+
+    transform: translateY(-50%);
+}
+
+#new #inputcontainer input {
+    font-size: calc((1.5vw + 2.25vh) / 2);
+    font-family: 'Open Sans', sans-serif;
+
+    border-bottom: 1px solid #565761;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+
+    outline: none;
+    padding: 2px;
+
+    margin: 8px;
+
+    width: calc(27% - 32px);
+}
+
+#new #inputcontainer input.invalid {
+    border-color: rgb(255, 0, 0);
+    color: rgb(185, 0, 0);
+}
+
+#new #inputcontainer.invalid::before {
+    content: "Red fields are invalid!";
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(185, 0, 0);
+
+    margin-left: 8px;
+
+    position: absolute;
+    top: -32px;
+    left: auto;
+}
+
+#new #submit {
+    --margin: calc((50vh + 50vw) * 0.025);
+
+    font-size: calc((1.5vw + 2.25vh) / 2);
+    font-family: 'Open Sans', sans-serif;
+
+    position: absolute;
+
+    background-color: var(--theme);
+    box-shadow: #00000041 2px 4px 8px;
+    cursor: pointer;
+
+    border: 0;
+    border-radius: 2px;
+    outline: none;
+
+    right: var(--margin);
+    bottom: var(--margin);
+
+    width: calc((50vh + 50vw) * 0.15);
+    height: calc((50vh + 50vw) * 0.05);
+
+    transition: 0.25s ease-out;
+}
+
+#new #submit:hover, #new #submit:active, #new #submit:focus {
+    box-shadow: #00000041 2px 6px 12px;
+    filter: brightness(110%);
+}
+
+@media only screen and (max-width: 900px) {
+    #new .box {
+        top: 30%;
+        left: 0;
+
+        width: 100%;
+        min-width: 0;
+        height: 70%;
+    }
+}
+
+#new.hide {
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+
+#new.nonexistant {
+    display: none;
+}
+
+#main {
+    font-size: calc((4vw + 6vh) / 2);
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+#main .container {
+    font-family: 'Open sans', sans-serif;
+
+    display: inline-block;
+    text-align: left;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+#main #exactAge {
+    font-weight: bold;
+
+    user-select: all;
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+}
+
+#settings {
+    position: fixed;
+    top: 32px;
+    right: 8px;
+}
+
+#settings::before {
+    content: "Settings";
+
+    position: fixed;
+    right: 8px;
+    top: 8px;
+
+    text-align: right;
+    color: #0000ee;
+
+    cursor: pointer;
+}
+
+#settings > * {
+    display: none;
+}
+
+#settings div {
+    margin-bottom: 8px;
+}
+
+#settings.show > * {
+    display: block;
 }
