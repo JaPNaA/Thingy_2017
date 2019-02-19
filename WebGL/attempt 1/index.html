@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> WebGL </title>
+    <style>
+    canvas{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top:0;
+        left: 0;
+    }
+    body{
+        overflow: hidden;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas>Your browser is not supported... :/</canvas>
+    </div>
+    <script id="shader-fs" type="x-shader/x-fragment">
+        precision mediump float;
+        void main(void) {
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        }
+    </script>
+    <script id="shader-vs" type="x-shader/x-vertex">
+        attribute vec3 aVertexPosition;
+        uniform mat4 uMVMatrix;
+        uniform mat4 uPMatrix;
+        void main(void) {
+            gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        }
+    </script>
+    <script src="http://learningwebgl.com/lessons/lesson01/glMatrix-0.9.5.min.js"></script>
+    <script src="https://cdn.rawgit.com/JaPNaA/kKJFDKJHhAIULFyOWYR-YQ-eyouHSDUIiuamsd/3579a6b8/%24.js"></script>
+    <script src=js.js></script>
+</body>
+</html>

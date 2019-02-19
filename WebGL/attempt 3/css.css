@@ -1,0 +1,14 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 0;
+}
+#cvs {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}

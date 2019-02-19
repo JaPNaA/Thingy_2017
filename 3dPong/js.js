@@ -216,7 +216,7 @@ class Ball {
         // this.obj.position.z += 0.1;
         var x = this.obj.position.x,
             z = this.obj.position.z,
-            w = this.radius * 2;
+            w = this.radius;
 
         if (x > 30) {
             this.vx = -Math.abs(this.vx);
@@ -241,7 +241,7 @@ class Ball {
                     this.vz = -Math.abs(this.vz);
                 }
                 this.vz *= 1.075;
-                this.vx *= 1.02;
+                this.vx *= 1.01;
                 break;
             }
         }
