@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body{
+    background-color:lightgrey;
+}
+.s2_containerD{
+    color:#404040;
+    font-family: courier new; 
+    font-size:75px;
+}
+
+.s2_containerT{
+    color:#000000;
+    font-weight: bold;
+    font-family: courier new;
+    font-size:150px;
+}
+.Error{
+    color:#FF1111;
+    font-size:75px;
+}
+textarea.txta{
+    width: auto;
+    height: auto;
+}

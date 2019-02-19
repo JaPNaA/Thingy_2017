@@ -1,0 +1,27 @@
+@keyframes a{
+    0%{color:#d0cedd}
+    10%{color:#2d2c34}
+    75%{color:#2d2c34}
+    100%{color:#d0cedd}
+}
+
+#cssTest {
+    color:green;
+}
+.cursor{
+    color:#2d2c34;
+    font-weight: bold;
+    animation: a 1.2s forwards infinite;
+}
+input.inP{
+    font-family: courier new;
+    border:0;
+}
+span.arrowC{
+    font-weight: bold;
+    animation: a 
+}
+textarea.txta{
+    width:100%;
+    height:90%;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Pretty Button </title>
+        <style>
+            button:hover {
+                background-color: #0041ff;
+                box-shadow: 2px 2px 4px #484848;
+            }
+            
+            button {
+                background: #215aff;
+                color: #f1f1f1;
+                padding-bottom: 16px;
+                padding-top: 16px;
+                padding-left: 32px;
+                padding-right: 32px;
+                font-size: 24px;
+                border: rgb(35, 91, 255) solid 1px;
+                border-radius: 6px;
+                transition: .225s;
+                cursor: pointer;
+                outline: none;
+                box-shadow: 1px 1px 2px 0px #353535;
+                user-select:none;
+                overflow: hidden;
+            }
+        </style>
+        <script>
+            function $(e){switch(e.substring(0,1)){case".":var t=document.getElementsByClassName(e.substring(1,e.length));if(0==t.length)return null;if(t.length>1)return t;if(1==t.length)return t[0];break;case"#":return document.getElementById(e.substring(1,e.length));default:var t=document.getElementsByTagName(e);if(0==t.length)return null;if(t.length>1)return t;if(1==t.length)return t[0]}}
+        </script>
+    </head>
+    <body>
+        <button>PRETTY</button>
+        <script> 
+            function ripple(e){
+                e.style.width="400px";
+                e.style.height="400px";
+                e.style.marginTop=e.style.top.substring(0,e.style.top.length-2)-e.parentElement.clientHeight*2+"px";
+                e.style.marginLeft=e.style.left.substring(0,e.style.left.length-2)-e.parentElement.clientWidth*2+"px";
+                e.style.borderRadius="200px";
+                e.style.opacity="0";
+            }
+            $("button").addEventListener('click',function(e){
+                a=document.createElement('div');
+                a.style="position:absolute; left:"+e.x+"px; top:"+e.y+"px; width:3px; height:3px; background-color:rgb(255,255,255); border-radius:1.5px; transition:.8s ease-out; opacity:1; margin-left:0px; margin-top:0px;";
+                this.appendChild(a);
+                setTimeout(function(){ripple(a);},10);
+                setTimeout(function(){
+                    $('button').removeChild($('div')[0]||$('div'));
+                },801);
+            },false);
+        </script>
+    </body>
+</html>

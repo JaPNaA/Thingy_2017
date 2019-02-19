@@ -1,0 +1,79 @@
+@keyframes loading{
+    0%{
+        opacity: 1;
+        font-size: 52px;
+        left: 20px;
+        top:8px;
+        color: green;
+        transform: rotate(123deg);
+    }
+    25%{
+        opacity: 0.9;
+        font-size: 35px;
+        left: 125px;
+        top: 5px;
+        color: orange;
+        transform: rotate(180deg);
+    }
+    50%{
+        opacity: 0.5;
+        font-size: 13px;
+        left: 25px;
+        top: 18px;
+        color: purple;
+        transform: rotate(324deg);
+    }
+    75%{
+        opacity: 0.8;
+        font-size: 21px;
+        left: 6px;
+        top: 10px;
+        color: aqua;
+        transform: rotate(256deg);
+    }
+    100%{
+        opacity: 1;
+        font-size: 52px;
+        left: 20px;
+        top:8px;
+        color: green;
+        transform: rotate(123deg);
+    }
+}
+
+.loading{
+    animation: loading 3s infinite normal forwards 0s;
+    position: relative;
+    width: 128px;
+    margin: 100px;
+    display: block;
+}
+td{
+    text-align: right;
+    padding-top: 12px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+    padding-right: 2px;
+    box-shadow: inset #e0e0e0 0px 0px 8px 4px;
+    background-color: white;
+    transition: 0.25s;
+    cursor: default;
+}
+table{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.true{
+    box-shadow: inset #80ffa2 0px 0px 8px 4px;
+}
+.false{
+    box-shadow: inset #ff8080 0px 0px 8px 4px;
+}
+.dry{
+    box-shadow: inset #ddc9c9 0px 0px 8px 4px; 
+}
+.never{
+    box-shadow: inset #e0e0e0 0px 0px 8px 4px;
+}
+.cool{
+    box-shadow: inset #fcffa6 0px 0px 8px 4px;
+}
