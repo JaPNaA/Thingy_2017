@@ -34,7 +34,7 @@ function settings() {
      * @param {Event} e event
      */
     function settingsClick(e) {
-        if (e.path[0] === this) {
+        if (e.target === this) {
             this.classList.toggle("show");
         }
     }
